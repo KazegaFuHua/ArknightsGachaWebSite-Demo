@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>明日方舟抽卡统计 - By 轩川浮华</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="echarts.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="global-cover">
+        <div id="global-cover2"></div>
+        <div id="global-cover1"></div>
+    </div>
+    <div id="loading">
+        <audio id="voice-title" src="amiya_title.wav" preload="auto"></audio>
+        <div id="loading-front"></div>
+        <div id="loading-line">
+            <div id="loading-line-left"><div></div></div>
+            <div id="loading-line-right"><div></div></div>
+            <div id="loading-start-cover">
+                <div id="loading-start-bg2">
+                    <div></div>
+                </div>
+                <div id="loading-start-bg">
+                    <div id="loading-start">
+                        <p>▶<br>start</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loading-data">
+        <div id="loading-data-cover-bg"></div>
+        <div id="loading-data-cover">
+            <div id="loading-data-bg2"><div></div></div>
+            <div id="loading-data-bg"><div></div></div>
+        </div>
+    </div>
+    <div id="error">
+        <div id="error-bgTop">
+            <img src="img/PRTS.png" alt="PRTS.png">
+        </div>
+        <div id="error-bgBottom">
+            <div id="error-bg">
+                <div id="error-msg">
+                    <button onclick="toggle_error('close')">确认</button>
+                    <span>NULL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="voice-hello" src="amiya_hello.wav" preload="auto"></audio>
+    <div id="float-HUD">
+        <p></p>
+    </div>
+    <div id="float-item">
+        <div id="float-voice">
+            <img src="img/voice-on.png" status="on" alt="语音开关" title="切换欢迎语开关">
+        </div>
+        <div id="float-tips">
+            <img src="img/tips.png" alt="提示" title="切换提示开关">
+        </div>
+        <div id="float-gachaExplain">
+            <img src="img/gachaExplain.png" alt="抽卡数据解释" title="查看抽卡数据解释">
+        </div>
+        <div id="float-download">
+            <img src="img/download.png" alt="下载抽卡数据" title="点击下载你的抽卡数据(JSON格式)">
+        </div>
+        <div id="float-share">
+            <img src="img/share.png" alt="分享抽卡数据" title="点击分享你的抽卡数据(需要当前输入的token有效)">
+        </div>
+    </div>
+    <div id="bg"></div>
+    <div id="login" class="box-shadow">
+        <button onclick="login()">登录</button>
+    </div>
+    <div id="get_token" class="drop-shadow">
+        <div>
+            <div id="get_token_title">
+                <span>请输入您的方舟token</span>
+            </div>
+            <div id="get_token_input">
+                <div>
+                    <p>输入token:</p>
+                    <div id="get_token_input-group">
+                        <span></span>
+                        <input id="token" type="text" name="token" placeholder="token由24个字符组成">
+                        <label for="token"></label>
+                    </div>
+                    <span id="token-tips" onclick="toggle_info('#token-tipsBox','show')"> # 不知道token是什么？怎么获取？</span>
+                    <div id="token_submit-group">
+                        <button type="submit" disabled="disabled" onclick="outputGacha($('#get_token_input-group>input').val())">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="token-tipsBox" class="drop-shadow">
+        <div>
+            <div id="token-tipsTitle">
+                <span>如何获取token</span>
+                <span onclick="toggle_info('#token-tipsBox','close')">&#10006</span>
+            </div>
+            <div id="token-tipsText">
+                <p>1、去<a href="https://ak.hypergryph.com/" target="_blank">明日方舟官网</a>登入明日方舟，然后关闭明日方舟官网的页面回到这里</p>
+                <p>2、点<a href="https://as.hypergryph.com/user/info/v1/token_by_cookie" target="_blank">这个</a>复制token后面双引号里面的内容 例：<img onclick="imgZoom($(this),'show')" class="img" src="img/tokenTips-1.png" alt="tokenTips-1.png"></p>
+                <p>3、将复制出来的内容粘贴到输入框提交即可</p>
+                <p># 本网站并不会收集你的token，仅用于查询抽卡数据，如果您仍旧觉得有安全隐患，可以去<a href="https://ak.hypergryph.com/user/home" target="_blank">个人中心</a>点击“清除其他设备的登入状态”
+                    <img onclick="imgZoom($(this),'show')" class="img" src="img/tokenTips-2.png" alt="tokenTips-2.png">
+                    然后点右上角的登出按钮
+                    <img onclick="imgZoom($(this),'show')" class="img" src="img/tokenTips-3.png" alt="tokenTips-3.png">
+                    与您的账户有关的所有token都将失效，且明日方舟网页与明日方舟手游也需要重新登录</p>
+            </div>
+        </div>
+    </div>
+    <!-- ======================================== DEMO START ======================================== -->
+    <div id="demo-tipsBox" class="drop-shadow">
+        <div>
+            <div id="demo-tipsTitle">
+                <span>DEMO页面提示！！！！</span>
+            </div>
+            <div id="demo-tipsText">
+                <p>本页面仅用于想要快速体验本项目的用户，填入任意字符都可以展示演示用的一小段抽卡统计<br>本页面不能获取你的抽卡信息！！<br>本页面不能获取你的抽卡信息！！<br>本页面不能获取你的抽卡信息！！<br>本页面不能获取你的抽卡信息！！</p>
+                <button onclick="localStorage['demo']='true';toggle_info('#demo-tipsBox','close');">已知晓</button>
+            </div>
+        </div>
+    </div>
+    <!-- ======================================== DEMO START ======================================== -->
+    <div id="info_box" class="drop-shadow">
+        <div>
+            <div id="info_title">
+                <span>
+                    <img src="img/hypergryph.ico" alt="hypergryph.ico">
+                    明日方舟 - 抽卡统计
+                </span>
+                <span onclick="toggle_info('#info_box','close',function(){toggle_info('#get_token','show')})">&#10006</span>
+            </div>
+            <div id="info">
+                <div id="info_left">
+                    <div id="poolBox">
+                        <span id="pool" class="pool">NULL</span>
+                        <div id="poolList"></div>
+                    </div>
+                    <div id="chart"></div>
+                </div>
+                <div id="info_right">
+                    <h2 id="nickname">NULL</h2>
+                    <p id="time">NULL - NULL</p>
+                    <table>
+                        <tr id="r3tr">
+                            <td><span id="r3">三星：</span></td>
+                            <td><span id="r3num">NULL</span></td>
+                            <td><span id="r3percent">NULL</span></td>
+                        </tr>
+                        <tr id="r4tr">
+                            <td><span id="r4">四星：</span></td>
+                            <td><span id="r4num">NULL</span></td>
+                            <td><span id="r4percent">NULL</span></td>
+                        </tr>
+                        <tr id="r5tr">
+                            <td><span id="r5">五星：</span></td>
+                            <td><span id="r5num">NULL</span></td>
+                            <td><span id="r5percent">NULL</span></td>
+                        </tr>
+                        <tr id="r6tr">
+                            <td><span id="r6">六星：</span></td>
+                            <td><span id="r6num">NULL</span></td>
+                            <td><span id="r6percent">NULL</span></td>
+                        </tr>
+                    </table>
+                    <h3>
+                        自本站统计以来，在
+                        <span class="pool">NULL</span>
+                        中一共抽了
+                        <span id="gachaNum">NULL</span>
+                        发，已经
+                        <span id="gachaLastR6Num">NULL</span>
+                        发没有出六星了
+                    </h3>
+                    <div>
+                        <span class="show_history" onclick="$('#r6box').slideToggle('fast')">显示/隐藏六星记录</span>
+                    </div>
+                    <div id="r6box">
+                        <h3>六星平均出货次数：
+                            <span id="avg_r6">NULL</span>
+                        </h3>
+                        <h3>六星出货历史：
+                            <span id="r6List">NULL</span>
+                        </h3>
+                    </div>
+                    <div>
+                        <span class="show_history" onclick="$('#r5box').slideToggle('fast')">显示/隐藏五星记录</span>
+                    </div>
+                    <div id="r5box">
+                        <h3>五星平均出货次数：
+                            <span id="avg_r5">NULL</span>
+                        </h3>
+                        <h3>五星出货历史：
+                            <span id="r5List">NULL</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="imgZoom">
+        <img src="img/bg.jpg" alt="占位" onclick="imgZoom($(this),'close')">
+    </div>
+    <footer>
+        <p>Source Code By 轩川浮华 Version 0.14-(2022.03.27) Beta版本 | 图表绘制库 By <a href="https://echarts.apache.org/zh/index.html" target="_blank">Apacha Echarts</a> | 本页面是测试版本，仅供参考 | <a href="https://gitee.com/xcfuhua/ArknightsGachaWebsite" target="_blank">Gitee仓库</a></p>
+    </footer>
+<script src="main.js"></script>
+</body>

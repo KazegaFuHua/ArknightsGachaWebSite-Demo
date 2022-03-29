@@ -459,7 +459,7 @@ function outputGacha(token) {
     // 显示loading_data
     toggle_loadData('show');
     $.ajax({
-        url: '/data.json',
+        url: 'data.json',
         type: 'GET',
         dataType: 'json',
         timeout: '10000',

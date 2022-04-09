@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title>test-小说页</title>
+		<link rel="stylesheet" href="main.css">
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 测试用css样式START -->
+		<style>
+			#tel,#logo {
+				height: 100px;
+				border: 1px solid black;
+				box-sizing: border-box;
+				display: block;
+			}
+			#logo {
+				width: 150px;
+			}
+			#tel {
+				width: 300px;
+			}
+			#fullSlide a {
+				border: 2px solid red;
+				box-sizing: border-box;
+			}
+			.product-img {
+				background-color: #dddddd;
+			}
+		</style>
+		<!-- 测试用css样式END -->
+	</head>
+	<body>
+		<div id="bg">
+			<img src="img/bg-1.jpg" alt="背景图">
+		</div>
+		<div id="header">
+			<div class="width-limit-1200 displayflex">
+				<a id="logo" href="#">
+					<img src="#" alt="header左侧图">
+				</a>
+				<a id="tel" href="#">
+					<img src="#" alt="header右侧图">
+				</a>
+			</div>
+		</div>
+		<div id="nav">
+			<div class="width-limit-1200 displayflex">
+				<a class="nav-a" href="#"><span class="nav-text">首页</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">1</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">2</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">3</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">4</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">5</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">6</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">7</span></a>
+				<a class="nav-a" href="#"><span class="nav-text">8</span></a>
+			</div>
+		</div>
+		<div id="fullSlide">
+			<!-- 留空，可以增加<div class="width-limit-1200"></div>来限制宽度 -->
+			<a href="#">
+				<img src="#" alt="图1">
+			</a>
+			<a href="#">
+				<img src="#" alt="图2">
+			</a>
+			<a href="#">
+				<img src="#" alt="图3">
+			</a>
+		</div>
+		<div id="iProduct" class="width-limit-1200 acrylic">
+			<div class="iTitle">
+				<h3>图书中心</h3>
+				<br>
+				<span>Products Center</span>
+			</div>
+			<div id="products-center" class="displayflex">
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片1" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品1</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片2" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品2</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片3" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品3</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片4" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品4</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片5" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品5</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片6" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品6</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片7" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品7</span>
+					</a>
+				</div>
+				<div class="product-style1">
+					<a class="product-img" href="#">
+						<img src="#" alt="作品图片8" >
+					</a>
+					<a class="product-title" href="#">
+						<span>作品8</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="iRecommend" class="width-limit-1200  acrylic">
+			<div class="iTitle">
+				<h3>推荐作品</h3>
+				<br>
+				<span>Recommend Products</span>
+			</div>
+			<div id="recommend-overflowHiddin">
+				<div id="recommend-products" class="displayflex">
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片1" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品1</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片2" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品2</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片3" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品3</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片4" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品4</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片5" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品5</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片6" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品6</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片7" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品7</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片8" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品8</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片9" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品9</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片10" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品10</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片11" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品11</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片12" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品12</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片13" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品13</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片14" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品14</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片15" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品15</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片16" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品16</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片17" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品17</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片18" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品18</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片19" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品19</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片20" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品20</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片21" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品21</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片22" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品22</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片23" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品23</span>
+						</a>
+					</div>
+					<div class="product-style2">
+						<a class="product-img" href="#">
+							<img src="#" alt="作品图片24" >
+						</a>
+						<a class="product-title" href="#">
+							<span>作品24</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="pages-button">
+				<input type="radio" name="pages" id="page1" value="1" checked="checked" />
+				<label for="page1"></label>
+				<input type="radio" name="pages" id="page2" value="2" />
+				<label for="page2"></label>
+			</div>
+			<div id="more-button">
+				<a href="#">更多</a>
+			</div>
+		</div>
+		<div id="footer" class="width-limit-1200">
+			<div id="footer-left">
+				<div class="list">
+					<h3>一</h3>
+					<a href="">1.1</a>
+					<a href="">1.2</a>
+					<a href="">1.3</a>
+					<a href="">1.4</a>
+					<a href="">1.5</a>
+				</div>
+				<div class="list">
+					<h3>二</h3>
+					<a href="">2.1</a>
+					<a href="">2.2</a>
+					<a href="">2.3</a>
+					<a href="">2.4</a>
+					<a href="">2.5</a>
+					<a href="">2.6</a>
+				</div>
+				<div class="list">
+					<h3>三</h3>
+					<a href="">3.1</a>
+					<a href="">3.2</a>
+					<a href="">3.3</a>
+				</div>
+				<div class="list">
+					<h3>四</h3>
+					<a href="">4.1</a>
+					<a href="">4.2</a>
+				</div>
+				<div class="list">
+					<h3>五</h3>
+					<a href="">5.1</a>
+				</div>
+			</div>
+			<div id="footer-right">
+				<img src="#" alt="图片">
+			</div>
+		</div>
+		<div id="copyright" class="width-limit-1200">
+			<span>
+				客服热线：000-888-8888
+			</span>
+			<span>
+				诺亚遗梦&nbsp;&nbsp;版权所有
+			</span>
+		</div>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

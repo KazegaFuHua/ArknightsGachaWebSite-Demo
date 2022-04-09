@@ -84,7 +84,7 @@ body,p,h1,h2,h3,h4,h5 {
 .iTitle h3 {
 	display: inline-block;
 	font-size: 2em;
-	color: #1fac9c;
+	color: rgb(244, 246, 251);
 	font-weight: normal;
 	margin-bottom: 0.2em;
 }
@@ -127,9 +127,6 @@ body,p,h1,h2,h3,h4,h5 {
 }
 #recommend-overflowHiddin {
 	overflow: hidden;
-}
-#iRecommend .iTitle h3 {
-	color: rgb(244, 246, 251);
 }
 /* 作品样式2，必须前面加上.product-style2  START */
 .product-style2 {

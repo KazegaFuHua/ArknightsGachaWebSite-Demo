@@ -62,8 +62,7 @@ body,p,h1,h2,h3,h4,h5 {
 	background-color: rgba(0,0,0,0.2);
 }
 #fullSlide {
-	background-color: #000000;
-	height: 400px;
+	height: 500px;
 	width: 100%;
 	overflow: hidden;
 }
@@ -71,6 +70,26 @@ body,p,h1,h2,h3,h4,h5 {
 	width: 100%;
 	height: 100%;
 	display: block;
+	position: relative;
+	background-color: #000000;
+}
+#fullSlide a img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+#fullSlide a img:first-child {
+	max-width: calc(1200px + 8em);
+	margin: auto;
+	box-shadow: #000000 0 0 2em 0.25em;
+	z-index: 1;
+	position: relative;
+}
+#fullSlide a img:last-child {
+	position: absolute;
+	top: 0;
+	filter: blur(0.5em);
 }
 #iProduct,#iRecommend {
 	margin-top: 1.4em;
@@ -154,6 +173,11 @@ body,p,h1,h2,h3,h4,h5 {
 }
 /* 作品样式2，必须前面加上.product-style2  END */
 /* 作品样式1、2共用css  START */
+.product-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 .product-title span {
 	color: #ffffff;
 }
@@ -279,8 +303,8 @@ body,p,h1,h2,h3,h4,h5 {
 	left: 50%;
 	transform: translate(-50%);
 	z-index: -99;/* 背景 */
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	/* max-width: 1500px; */
 }
 #bg img {

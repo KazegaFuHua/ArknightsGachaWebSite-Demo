@@ -2,8 +2,9 @@
 <html lang="zh-cn">
 	<head>
 		<meta charset="utf-8">
-		<title>test-小说页</title>
-		<link rel="stylesheet" href="main.css">
+		<title>test-小说详细信息页</title>
+		<link rel="stylesheet" href="css/bookpage.css">
+		<link rel="stylesheet" href="css/book-info.css">
 		<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.easing1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- 测试用css样式START -->
@@ -20,12 +21,11 @@
 			#tel {
 				width: 300px;
 			}
-			#fullSlide a {
-				border: 2px solid red;
-				box-sizing: border-box;
-			}
 			.product-img {
 				background-color: #dddddd;
+			}
+			#book-cover {
+				border: 1px #000000 solid;
 			}
 		</style>
 		<!-- 测试用css样式END -->
@@ -54,303 +54,60 @@
 				<a class="nav-a" href="#"><span class="nav-text">激励作者</span></a>
 			</div>
 		</div>
-		<div id="fullSlide">
-			<!-- 留空，可以增加<div class="width-limit-1200"></div>来限制宽度 -->
-			<a href="#">
-				<img src="#" alt="图1">
-			</a>
-			<a href="#">
-				<img src="#" alt="图2">
-			</a>
-			<a href="#">
-				<img src="#" alt="图3">
-			</a>
-		</div>
-		<div id="iProduct" class="width-limit-1200 acrylic">
-			<div class="iTitle">
-				<h3>图书中心</h3>
-				<br>
-				<span>Book Center</span>
+		<div id="info-body" class="acrylic width-limit-1200">
+			<div id="search-myaccount">
+				<div id="search-box">
+					<span>&#128269;</span>
+					<input type="text" name="search-book" id="search-input" placeholder="键入关键词搜索" />
+					<label for="search-book"></label>
+				</div>
+				<div id="myaccount-box">
+					<div id="head-portrait">
+						<img src="#" alt="头像" >
+					</div>
+					<a href="#" id="create">
+						发布小说
+					</a>
+				</div>
 			</div>
-			<div id="products-center" class="displayflex">
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片1" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品1</span>
-					</a>
+			<div id="main-info">
+				<div id="book-cover">
+					<img src="http://rs.sfacg.com/web/novel/images/NovelCover/Big/2019/06/f73a6a2b-865b-4d6d-bf30-9cb67d9dc434.jpg" alt="书的封面" >
 				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片2" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品2</span>
-					</a>
-				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片3" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品3</span>
-					</a>
-				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片4" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品4</span>
-					</a>
-				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片5" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品5</span>
-					</a>
-				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片6" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品6</span>
-					</a>
-				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片7" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品7</span>
-					</a>
-				</div>
-				<div class="product-style1">
-					<a class="product-img" href="#">
-						<img src="#" alt="作品图片8" >
-					</a>
-					<a class="product-title" href="#">
-						<span>作品8</span>
-					</a>
+				<div id="book-info">
+					<h1 id="book-title">我把自己升级成妖皇</h1>
+					<div id="author-count-info">
+						<div id="author-info">
+							<img src="https://rss.sfacg.com/web/account/images/avatars/pc/1910/08/48536509-87f6-4243-9a6f-ec1261bfdfa4.jpg" id="author-img" alt="作者头像" >
+							<span id="author-name">
+								何处是归途
+							</span>
+						</div>
+						<span id="book-tag">
+							类型：<span>魔幻</span>
+						</span>
+						<span id="book-words">
+							字数：<span>114514</span>
+						</span>
+						<span id="book-click">
+							点击：<span>1919810</span>
+						</span>
+						<span id="book-last-update">
+							更新：<span>1999/12/31 23:59:59</span>
+						</span>
+					</div>
+					<div id="book-introduce">新书《变身绝色 女武神》已经发书哟，不一样的精彩等待你的光临！</div>
+					<div id="book-button">
+						<a href="#" id="read-book">点击阅读</a>
+						<a href="#" id="book-likes">点赞 <span>2333</span></a>
+						<a href="#" id="bool-favourite">收藏 <span>2333</span></a>
+						<a href="#" id="book-share">分享</a>
+						<a href="#" id="book-report">举报</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div id="iRecommend" class="width-limit-1200  acrylic">
-			<div class="iTitle">
-				<h3>推荐作品</h3>
-				<br>
-				<span>Recommend Products</span>
-			</div>
-			<div id="recommend-overflowHiddin">
-				<div id="recommend-products" class="displayflex">
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片1" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品1</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片2" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品2</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片3" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品3</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片4" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品4</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片5" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品5</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片6" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品6</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片7" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品7</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片8" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品8</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片9" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品9</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片10" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品10</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片11" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品11</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片12" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品12</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片13" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品13</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片14" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品14</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片15" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品15</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片16" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品16</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片17" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品17</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片18" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品18</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片19" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品19</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片20" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品20</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片21" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品21</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片22" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品22</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片23" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品23</span>
-						</a>
-					</div>
-					<div class="product-style2">
-						<a class="product-img" href="#">
-							<img src="#" alt="作品图片24" >
-						</a>
-						<a class="product-title" href="#">
-							<span>作品24</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div id="pages-button">
-				<input type="radio" name="pages" id="page1" value="1" checked="checked" />
-				<label for="page1"></label>
-				<input type="radio" name="pages" id="page2" value="2" />
-				<label for="page2"></label>
-			</div>
-			<div id="more-button">
-				<a href="#">更多</a>
-			</div>
-		</div>
+
 		<div id="footer" class="width-limit-1200">
 			<div id="footer-left">
 				<div class="list">

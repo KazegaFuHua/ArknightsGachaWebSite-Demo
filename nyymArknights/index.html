@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>test-小说详细信息页</title>
-		<link rel="stylesheet" href="css/bookpage.css">
+		<link rel="stylesheet" href="css/book-page.css">
 		<link rel="stylesheet" href="css/book-info.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<script src="js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.easing1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- 测试用css样式START -->
@@ -20,12 +21,6 @@
 			}
 			#tel {
 				width: 300px;
-			}
-			.product-img {
-				background-color: #dddddd;
-			}
-			#book-cover {
-				border: 1px #000000 solid;
 			}
 		</style>
 		<!-- 测试用css样式END -->
@@ -57,15 +52,15 @@
 		<div id="info-body" class="acrylic width-limit-1200">
 			<div id="search-myaccount">
 				<div id="search-box">
-					<span>&#128269;</span>
+					<i class="fa fa-search"></i>
 					<input type="text" name="search-book" id="search-input" placeholder="键入关键词搜索" />
-					<label for="search-book"></label>
+					<label for="search-input"></label>
 				</div>
 				<div id="myaccount-box">
 					<div id="head-portrait">
 						<img src="#" alt="头像" >
 					</div>
-					<a href="#" id="create">
+					<a href="#" id="create" class="button-default">
 						发布小说
 					</a>
 				</div>
@@ -74,16 +69,16 @@
 				<div id="book-cover">
 					<img src="http://rs.sfacg.com/web/novel/images/NovelCover/Big/2019/06/f73a6a2b-865b-4d6d-bf30-9cb67d9dc434.jpg" alt="书的封面" >
 				</div>
-				<div id="book-info">
-					<h1 id="book-title">我把自己升级成妖皇</h1>
+				<div id="book-info" class="info-box-style-default">
+					<h1 class="book-title">我把自己升级成妖皇</h1>
 					<div id="author-count-info">
 						<div id="author-info">
-							<img src="https://rss.sfacg.com/web/account/images/avatars/pc/1910/08/48536509-87f6-4243-9a6f-ec1261bfdfa4.jpg" id="author-img" alt="作者头像" >
-							<span id="author-name">
+							<img src="https://rss.sfacg.com/web/account/images/avatars/pc/1910/08/48536509-87f6-4243-9a6f-ec1261bfdfa4.jpg" id="author-img" class="author-img" alt="作者头像" >
+							<span id="author-name" class="author-name">
 								何处是归途
 							</span>
 						</div>
-						<span id="book-tag">
+						<span id="book-type">
 							类型：<span>魔幻</span>
 						</span>
 						<span id="book-words">
@@ -98,36 +93,107 @@
 					</div>
 					<div id="book-introduce">新书《变身绝色 女武神》已经发书哟，不一样的精彩等待你的光临！</div>
 					<div id="book-button">
-						<a href="#" id="read-book">点击阅读</a>
-						<a href="#" id="book-likes">点赞 <span>2333</span></a>
-						<a href="#" id="bool-favourite">收藏 <span>2333</span></a>
-						<a href="#" id="book-share">分享</a>
-						<a href="#" id="book-report">举报</a>
+						<a href="#" id="read-book" class="button-default">点击阅读</a>
+						<a href="#" id="book-likes" class="button-default">点赞 <span>2333</span></a>
+						<a href="#" id="bool-favourite" class="button-default">收藏 <span>2333</span></a>
+						<a href="#" id="book-share" class="button-default">分享</a>
+						<a href="#" id="book-report" class="button-default">举报</a>
 					</div>
 				</div>
 			</div>
+			<div class="info-box-style-default">
+				<div class="displayflex">
+					<div id="book-path">
+						<a href="#" style="display: flex;align-items: center;" class="underline">
+							<i class="fa fa-2x fa-home"></i>
+							&nbsp;首页
+						</a>
+						&emsp;
+						<i class="fa fa-2x fa-angle-right"></i>
+						&emsp;
+						<a href="#" class="underline">轻小说</a>
+						&emsp;
+						<i class="fa fa-2x fa-angle-right"></i>
+						&emsp;
+						<a href="#" class="book-title underline">我把自己升级成妖皇</a>
+					</div>
+				</div>
+				<div id="book-chapter-preview">
+					<p>
+						最新章节：
+						<a href="#" id="chapter-preview-title" class="underline">054东方傲回来了</a>
+					</p>
+					<div id="chapter-preview-content">一直跟踪羲凰的老爹，此刻也发现情况不对。他就在不远处的茶亭里面，本来还准备喝一杯茶，看这姑娘能玩出什么花样来。结果他的茶刚泡上，都还没有来得及喝一口，羲凰那边就出事了。本来好好旋转着的木马，突然加速，周围的景色也随之大变。就在他的眼前，木马仿佛活了过来一般，朝着四面八方冲了出来。“妈的，这是哪</div>
+				</div>
+				<div id="book-tag">
+					<a href="#" class="button-default"><i class="fa fa-tag"></i>异世界</a>
+					<a href="#" class="button-default"><i class="fa fa-tag"></i>伪娘</a>
+					<a href="#" class="button-default"><i class="fa fa-tag"></i>纯爱</a>
+					<a href="#" class="button-default"><i class="fa fa-tag"></i>变身</a>
+				</div>
+			</div>
+			<div class="info-box-style-default displayflex">
+				<div id="other-info">
+					<div class="box-title">
+						<span>作者介绍</span>
+					</div>
+					<div id="author-box" class="displayflex">
+						<img src="https://rss.sfacg.com/web/account/images/avatars/pc/1910/08/48536509-87f6-4243-9a6f-ec1261bfdfa4.jpg" alt="作者头像" class="author-img">
+						<div>
+							<a class="author-name underline">何处是归途</a>
+							<span class="author-introduce">何处是归途</span>
+						</div>
+					</div>
+				</div>
+				<div id="ranking">
+					<span>排行榜</span>
+				</div>
+			</div>
 		</div>
-
+		<div id="comment-box" class="acrylic width-limit-1200 displayflex">
+			<div class="left">
+				<div class="top info-box-style-default">
+					<div class="nav">
+						<input type="radio" id="short-comment" name="comment-type" checked/>
+						<label for="short-comment" class="short-comment">简评（233）</label>
+						&emsp;
+						<input type="radio" id="long-comment" name="comment-type"/>
+						<label for="long-comment" class="long-comment">长评（5）</label>
+					</div>
+					<div class="comment-input displayflex">
+						<textarea placeholder="来点友善的评论"></textarea>
+						<a href="#" class="button-default">提交评论</a>
+					</div>
+				</div>
+				<div class="short-comment">
+					<div></div>
+				</div>
+				<div class="long-comment">
+					<div></div>
+				</div>
+			</div>
+			<div class="right info-box-style-default">a</div>
+		</div>
 		<div id="footer" class="width-limit-1200">
 			<div id="footer-left">
 				<div class="list">
 					<h3></h3>
-					<a href="">联系客服（物理）</a>
-					<a href="">交流群号</a>
-					<a href="">运营团队</a>
-					<a href="">加入我们</a>
+					<a href="#">联系客服（物理）</a>
+					<a href="#">交流群号</a>
+					<a href="#">运营团队</a>
+					<a href="#">加入我们</a>
 				</div>
 				<div class="list">
 					<h3></h3>
-					<a href="">本站开支一览</a>
-					<a href="">我们的各平台账号</a>
-					<a href="">爱发电</a>
+					<a href="#">本站开支一览</a>
+					<a href="#">我们的各平台账号</a>
+					<a href="#">爱发电</a>
 				</div>
 				<div class="list">
 					<h3></h3>
-					<a href="">问题反馈</a>
-					<a href="">作者界面</a>
-					<a href="">本站指南</a>
+					<a href="#">问题反馈</a>
+					<a href="#">作者界面</a>
+					<a href="#">本站指南</a>
 				</div>
 			</div>
 			<div id="footer-right">

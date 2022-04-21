@@ -164,7 +164,7 @@ body,p,h1,h2,h3,h4,h5 {
 	flex-wrap: wrap;
 	margin-top: 1em;
 }
-#recommend-overflowHiddin {
+#recommend-overflowHidden {
 	overflow: hidden;
 }
 /* 作品样式2，必须前面加上.product-style2  START */

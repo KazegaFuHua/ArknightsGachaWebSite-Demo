@@ -284,7 +284,7 @@
 }
 #comment-box .nav {
 	text-align: center;
-	border-bottom: 1px #aaaaaa solid;
+	border-bottom: 1px #666666 solid;
 }
 #comment-box .nav input {
 	display: none;
@@ -292,9 +292,9 @@
 #comment-box .nav label {
 	cursor: pointer;
 	font-size: 1.5rem;
-	margin-bottom: -1px;
 	padding-bottom: 0.75em;
-	border-bottom: #aaaaaa 3px solid;
+	margin-bottom: -1px;
+	border-bottom: #666666 3px solid;
 	display: inline-block;
 	transition: all 300ms;
 }
@@ -304,7 +304,6 @@
 }
 #comment-box .comment-input {
 	margin-top: 1em;
-	align-items: flex-end;
 	flex-direction: column;
 }
 #comment-box .comment-input textarea {
@@ -319,6 +318,7 @@
 	color: var(--themeFont);
 	padding: 0.5em;
 	box-sizing: border-box;
+
 }
 #comment-box .comment-input textarea:focus,#comment-box .comment-input textarea:hover {
 	border-color: var(--themeColor3);
@@ -328,4 +328,87 @@
 	width: 8em;
 	background-color: var(--themeColor2);
 	margin-top: 0.5em;
+	margin-left: 1em;
+}
+#comment-box .comment-input>div {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+#comment-box .cmt-box {
+	padding: 1em 0;
+	border-bottom: 1px #666666 solid;
+	display: flex;
+	flex-direction: column;
+}
+#comment-box .cmt-box:first-child {
+	padding-top: 0;
+}
+#comment-box .cmt-box:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+#comment-box .user-info-box {
+	display: flex;
+	position: relative;
+}
+#comment-box .user-info-box i {
+	margin-left: auto;
+	margin-top: 0.25em;
+	font-size: 1.5em;
+	color: #898989;
+	cursor: pointer;
+	transition: all 300ms;
+	width: 1em;
+	text-align: center;
+}
+#comment-box .user-info-box i:hover {
+	color: var(--themeFont);
+}
+#comment-box .user-img {
+	width: 4em;
+	border-radius: 4em;
+	margin-right: 1em;
+}
+#comment-box .user-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+#comment-box .cmt-content {
+	margin: 0.5em 0 0 5em;
+}
+#comment-box .user-name {
+	color: var(--themeColor3);
+}
+#comment-box .cmt-time {
+	color: #898989;
+}
+#comment-box .user-tag {
+	margin-left: 0.5em;
+}
+#comment-box .user-tag-admin {
+	color: #FF33cc;
+}
+#comment-box .option-list {
+	display: none;
+	width: 8em;
+	padding: 0.5em 0;
+	flex-direction: column;
+	border-radius: 0.5em;
+	background-color: var(--themeBg);
+	box-shadow: #ffffff 0 0 0.25em;
+	position: absolute;
+	right: 2em;
+	overflow: hidden;
+	opacity: 0;
+}
+#comment-box .option-list span {
+	padding: 0.5em 1em;
+	transition: all 300ms;
+	cursor: pointer;
+}
+#comment-box .option-list span:hover {
+	background-color: #323940;
+	color: var(--themeColor3);
 }

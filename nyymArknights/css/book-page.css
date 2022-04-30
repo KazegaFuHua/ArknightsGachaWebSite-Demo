@@ -1,23 +1,16 @@
 @charset "utf-8";
-/* 主题色 START */
-:root {
-	--themeColor1: #1fac9c;
-	--themeColor2: #ff8d40;
-	--themeColor3: #3686d8;
-}
-/* 主题色 E N D */
 /* 预设置css START */
 .underline {
 	padding: 0.125em 0;
 	background-image: linear-gradient(var(--themeColor1),var(--themeColor1));
-	background-size: 0 0.2em;
+	background-size: 0 10%;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	transition: all 300ms;
 	cursor: pointer;
 }
 .underline:hover {
-	background-size: 100% 0.25em;
+	background-size: 100% 10%;
 }
 a {
 	text-decoration: none;
@@ -62,7 +55,7 @@ body,p,h1,h2,h3,h4,h5 {
 }
 #nav {
 	background-color: #0099FF;
-	background-image: linear-gradient(to right,rgba(000,128,255,0.6),rgba(127,076,255,0.7),rgba(102,025,255,0.7));
+	background-image: linear-gradient(to right,rgba(000,000,079,0.5),rgba(043,000,153,0.5),rgba(053,000,189,0.5));
 	height: 42px;
 	width: 100%;
 }
@@ -139,7 +132,7 @@ body,p,h1,h2,h3,h4,h5 {
 .product-style1 {
 	height: 256px;
 	margin-bottom: 1em;
-	border-bottom: 2px #f5f5f5 solid;
+	border-bottom: 2px var(--themeWhite) solid;
 	box-sizing: border-box;
 }
 .product-style1 .product-img {
@@ -177,7 +170,7 @@ body,p,h1,h2,h3,h4,h5 {
 	overflow: hidden;
 }
 .product-style2:hover {
-	border-color: #666666;
+	border-color: var(--themeColor1);
 }
 .product-style2 .product-img {
 	margin: 8px 8px 0 8px;
@@ -256,8 +249,8 @@ body,p,h1,h2,h3,h4,h5 {
 #more-button a {
 	padding: 0.75em 3.5em;
 	background-color: white;
-	border: 1px solid var(--themeColor1);
-	color: var(--themeColor1);
+	border: 1px solid var(--themeColor4);
+	color: var(--themeColor4);
 	border-radius: 10em;
 	transition: all 0.5s ease;
 }
@@ -267,9 +260,9 @@ body,p,h1,h2,h3,h4,h5 {
 }
 #footer {
 	margin-top: 1.5em;
-	border-bottom: 3px solid var(--themeColor2);
+	border-bottom: 3px solid var(--themeColor3);
 	padding: 2em 4em;
-	background-color: var(--themeColor1);
+	background-color: var(--themeBlack);
 	justify-content: space-between;
 	align-items: center;
 	display: flex;

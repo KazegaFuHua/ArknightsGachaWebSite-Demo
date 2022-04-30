@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* 本文件是网页的主题色内容 */
+:root {
+    /* 亮色字#ffffff   暗色字#333333 */
+    --themeFont: #ffffff;
+    /* 亮色背景#f8fdff  暗色背景#24292e */
+    --themeBg: #24292e;
+    /* 主题白色 */
+    --themeWhite: #f5f5f0;
+    /* 主题黑色 */
+    --themeBlack: rgba(020,021,022,1);
+    /* 主题色1 */
+    --themeColor1: rgba(038,156,212,0.9);
+    /* 主题色2 */
+    --themeColor2: rgba(204,076,101,0.5);
+    /* 主题色3 */
+    --themeColor3: rgba(034,187,255,1);
+    /* 主题色4 */
+    --themeColor4: #1fac9c;
+}

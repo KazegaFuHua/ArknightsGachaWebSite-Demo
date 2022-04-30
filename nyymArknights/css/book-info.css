@@ -254,10 +254,10 @@
 }
 #other-info {
 	width: calc(70% - 1em);
+	min-height: 400px;
 }
 #ranking {
 	width: 30%;
-	height: 400px;
 	background-color: #555555;
 	border-radius: 1em;
 	padding: 1em;
@@ -275,6 +275,7 @@
 }
 #comment-box .right {
 	width: 30%;
+	height: 100%;
 	box-sizing: border-box;
 	margin-left: 1em;
 	margin-top: 0;

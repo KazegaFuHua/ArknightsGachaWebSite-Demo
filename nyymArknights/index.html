@@ -26,24 +26,24 @@
 		<!-- 测试用css样式END -->
 	</head>
 	<body>
-		<!--背景图-->
+<!--		背景图-->
 		<div id="bg">
 			<img src="img/bg-1.jpg" alt="背景图">
 		</div>
-		<!--顶部图-->
+<!--		顶部图-->
 		<div id="header">
 			<div class="width-limit-1200 displayflex">
-				<!--左侧-->
+<!--				左侧-->
 				<a id="logo" href="#">
 					<img src="#" alt="header左侧图">
 				</a>
-				<!--右侧-->
+<!--				右侧-->
 				<a id="tel" href="#">
 					<img src="#" alt="header右侧图">
 				</a>
 			</div>
 		</div>
-		<!--导航栏-->
+<!--		导航栏-->
 		<div id="nav">
 			<div class="width-limit-1200 displayflex">
 				<a class="nav-a" href="#"><span class="nav-text">首页</span></a>
@@ -54,15 +54,34 @@
 				<a class="nav-a" href="#"><span class="nav-text">激励作者</span></a>
 			</div>
 		</div>
-		<!--书本信息介绍-->
+<!--		书本信息介绍-->
 		<div id="info-body" class="acrylic width-limit-1200">
-			<!--书本主要信息-->
+<!--			搜索、我的账户-->
+			<div id="search-myaccount">
+<!--				搜索-->
+				<div id="search-box">
+					<i class="fa fa-search"></i>
+					<input type="text" name="search-book" id="search-input" placeholder="键入关键词搜索" />
+					<label for="search-input"></label>
+				</div>
+<!--				我的账户-->
+				<div id="myaccount-box">
+					<div id="head-portrait">
+						<img src="#" alt="头像" >
+					</div>
+<!--					发布小说-->
+					<a href="#" id="create" class="button-default">
+						发布小说
+					</a>
+				</div>
+			</div>
+<!--			书本主要信息-->
 			<div id="main-info">
 				<!--书本封面-->
 				<div id="book-cover">
 					<img src="http://rs.sfacg.com/web/novel/images/NovelCover/Big/2019/06/f73a6a2b-865b-4d6d-bf30-9cb67d9dc434.jpg" alt="书的封面" >
 				</div>
-				<!--书本信息-->
+<!--				书本信息-->
 				<div id="book-info" class="info-box-style-default">
 					<h1 class="book-title">我把自己升级成妖皇</h1>
 					<div id="author-count-info">
@@ -95,9 +114,9 @@
 					</div>
 				</div>
 			</div>
-			<!--书本其他信息-->
+<!--			书本其他信息-->
 			<div class="info-box-style-default">
-				<!--网站当前所在路径-->
+<!--				网站当前所在路径-->
 				<div class="displayflex">
 					<div id="book-path">
 						<a href="#" style="display: flex;align-items: center;" class="underline">
@@ -114,7 +133,7 @@
 						<a href="#" class="book-title underline">我把自己升级成妖皇</a>
 					</div>
 				</div>
-				<!--章节预览-->
+<!--				章节预览-->
 				<div id="book-chapter-preview">
 					<p>
 						最新章节：
@@ -122,7 +141,7 @@
 					</p>
 					<div id="chapter-preview-content">一直跟踪羲凰的老爹，此刻也发现情况不对。他就在不远处的茶亭里面，本来还准备喝一杯茶，看这姑娘能玩出什么花样来。结果他的茶刚泡上，都还没有来得及喝一口，羲凰那边就出事了。本来好好旋转着的木马，突然加速，周围的景色也随之大变。就在他的眼前，木马仿佛活了过来一般，朝着四面八方冲了出来。“妈的，这是哪</div>
 				</div>
-				<!--书本标签-->
+<!--				书本标签-->
 				<div id="book-tag">
 					<a href="#" class="button-default"><i class="fa fa-tag"></i>异世界</a>
 					<a href="#" class="button-default"><i class="fa fa-tag"></i>伪娘</a>
@@ -131,7 +150,12 @@
 				</div>
 			</div>
 			<div class="info-box-style-default displayflex">
+<!--				其他信息-->
 				<div id="other-info">
+					<div class="box-title">
+						<span>投票功能占位，绝对不是太复杂懒得写</span>
+					</div>
+					<div style="height: 250px"></div>
 					<div class="box-title">
 						<span>作者介绍</span>
 					</div>
@@ -144,17 +168,17 @@
 					</div>
 				</div>
 				<div id="ranking">
-					<span>排行榜</span>
+					<span>我坦白，懒得写排行榜</span>
 				</div>
 			</div>
 		</div>
-		<!--评论区域-->
+<!--		评论区域-->
 		<div id="comment-box" class="acrylic width-limit-1200 displayflex">
-			<!--评论区域左侧-->
+<!--			评论区域左侧-->
 			<div class="left">
-				<!--评论区域上侧-->
+<!--				评论区域上侧-->
 				<div class="top info-box-style-default">
-					<!--长评短评切换栏-->
+<!--					长评短评切换栏-->
 					<div class="nav">
 						<input type="radio" id="short-comment" name="comment-type" checked/>
 						<label for="short-comment" class="short-comment">简评（233）</label>
@@ -162,16 +186,17 @@
 						<input type="radio" id="long-comment" name="comment-type"/>
 						<label for="long-comment" class="long-comment">长评（5）</label>
 					</div>
-					<!--评论输入框-->
+<!--					评论输入框-->
 					<div class="comment-input displayflex">
 						<textarea maxlength="150" placeholder="来点友善的评论"></textarea>
 						<div>
-							<span>0 / 150</span>
+							<span>0</span>
+							<span>&nbsp;/&nbsp;150</span>
 							<a href="#" class="button-default">提交评论</a>
 						</div>
 					</div>
 				</div>
-				<!--短评评论内容-->
+<!--				短评评论内容-->
 				<div class="short-comment info-box-style-default">
 					<div class="cmt-box">
 						<div class="user-info-box">
@@ -281,7 +306,7 @@
 						<a class="button-default">显示更多</a>
 					</div>
 				</div>
-				<!--长评评论内容-->
+<!--				长评评论内容-->
 				<div class="long-comment info-box-style-default">
 					<div class="cmt-box">
 						<div class="user-info-box">
@@ -320,10 +345,12 @@
 					</div>
 				</div>
 			</div>
-			<!--评论区域右侧-->
-			<div class="right info-box-style-default">a</div>
+<!--			评论区域右侧-->
+			<div class="right info-box-style-default">
+				作者的其他作品，推荐内容等，待后端完成再开发
+			</div>
 		</div>
-		<!--页脚-->
+<!--		页脚-->
 		<div id="footer" class="width-limit-1200">
 			<div id="footer-left">
 				<div class="list">
@@ -350,7 +377,7 @@
 				<img src="#" alt="图片">
 			</div>
 		</div>
-		<!--底部信息-->
+<!--		底部信息-->
 		<div id="copyright" class="width-limit-1200">
 			<span>
 				客服热线：000-888-8888

@@ -130,57 +130,90 @@ $("#comment-box .cmt-more a").on("click",function () {
 	$(this).css("background-color", "#898989");
 	// 找到最后一个评论元素
 	let cmt_content = $(this).parent().prev();
-	let cmt_json = {
-		"user-img": "https://rss.sfacg.com/web/account/images/avatars/upload/APP/1605/1463479732757.jpg",
-		"user-name": "不是轻小说",
-		"user-uid": "1",
-		"user-tag": [
-			{
-				"class": "user-tag-admin",
-				"name": "管理员"
-			},
-			{
-				"class": "user-tag-notice",
-				"name": "公告"
-			}
-		],
-		"cmt-time": "1145-01-04 19:19:10",
-		"cmt-content": "评论系统...力竭了",
-		"cmt-like": "0001",
-		"cmt-comment": {
-			"count": "0002",
-			"comment": [
-				{
-					"user-img": "https://rss.sfacg.com/web/account/images/avatars/upload/APP/1605/1463479732757.jpg",
-					"user-name": "SF轻小说1",
-					"user-uid": "2",
-					"user-tag": [
-						{
-							"class": "user-tag-admin",
-							"name": "管理员"
-
-						}
-					],
-					"cmt-time": "1145-01-04 19:19:11",
-					"cmt-content": "永远维护中。。。",
-				},
-				{
-					"user-img": "https://rss.sfacg.com/web/account/images/avatars/upload/APP/1605/1463479732757.jpg",
-					"user-name": "SF轻小说2",
-					"user-uid": "3",
-					"user-tag": [
-						{
-							"class": "user-tag-admin",
-							"name": "管理员"
-
-						}
-					],
-					"cmt-time": "1145-01-04 19:19:50",
-					"cmt-content": "哼嗯嗯啊啊啊",
-				}
-			]
-		}
-	}
+	// 评论数据模板
+	let cmt_json = [
+    // 第一个评论
+    {
+        // 用户头像链接
+        "user-img": "https://rss.sfacg.com/web/account/images/avatars/upload/APP/1605/1463479732757.jpg",
+        // 用户名
+        "user-name": "不是轻小说",
+        // 用户UID
+        "user-uid": "1",
+        // 用户标签（管理员等）
+        "user-tag": [
+            // 标签1
+            {
+                // 标签的class样式名	
+                "class": "user-tag-admin",
+                // 标签的中文名
+                "name": "管理员"
+            },
+            // 标签2
+            {
+                // 标签的class样式名	
+                "class": "user-tag-notice",
+                // 标签的中文名
+                "name": "公告"
+            }
+        ],
+        // 评论发布时间
+        "cmt-time": "1145-01-04 19:19:10",
+        // 评论内容
+        "cmt-content": "评论系统...力竭了",
+        // 评论点赞数
+        "cmt-like": "0001",
+        // 评论的回复
+        "cmt-comment": [
+            // 评论1
+            {
+                // 用户头像链接
+                "user-img": "https://rss.sfacg.com/web/account/images/avatars/upload/APP/1605/1463479732757.jpg",
+                // 用户名
+                "user-name": "SF轻小说1",
+                // 用户UID
+                "user-uid": "2",
+                // 用户标签
+                "user-tag": [
+                    // 标签1
+                    {
+                        // 标签的class样式名	
+                        "class": "user-tag-admin",
+                        // 标签的中文名
+                        "name": "管理员"
+                    }
+                ],
+                // 评论发布时间
+                "cmt-time": "1145-01-04 19:19:11",
+                // 评论内容
+                "cmt-content": "永远维护中。。。"
+            },
+            // 评论2
+            {
+                // 用户头像链接
+                "user-img": "https://rss.sfacg.com/web/account/images/avatars/upload/APP/1605/1463479732757.jpg",
+                // 用户名
+                "user-name": "SF轻小说2",
+                // 用户UID
+                "user-uid": "3",
+                // 用户标签
+                "user-tag": [
+                    // 标签1
+                    {
+                        // 标签的class样式名
+                        "class": "user-tag-admin",
+                        // 标签的中文名
+                        "name": "管理员"
+                    }
+                ],
+                // 评论发布时间
+                "cmt-time": "1145-01-04 19:19:50",
+                // 评论内容
+                "cmt-content": "哼嗯嗯啊啊啊"
+            }
+        ]
+    }
+]
 	setTimeout(function () {
 		// 创建user_tag的html字符串
 		let user_tags = "";
